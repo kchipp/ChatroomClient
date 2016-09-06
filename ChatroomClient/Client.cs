@@ -23,9 +23,9 @@ namespace ChatroomClient
         {
             while (true)
             {
-                byte[] inStream = new byte[1024];
-                server.Read(inStream, 0, inStream.Length);
-                string message = Encoding.ASCII.GetString(inStream);
+                byte[] stream = new byte[1024];
+                server.Read(stream, 0, stream.Length);
+                string message = Encoding.ASCII.GetString(stream);
                 message = message.Substring(0, message.IndexOf("\0"));
                 Console.WriteLine(message);
             }
